@@ -1,0 +1,27 @@
+body {
+    background-color: darkgray;
+}
+
+
+#LogInForm {
+    width: 300px;
+    height: 300px;
+    padding-left: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: gray;
+    margin-left: 550px;
+    margin-top: 200px;
+}
+
+#user {
+    border-radius: 5px;
+}
+
+#pass {
+    border-radius: 5px;
+}
+
+#submit {
+    border-radius: 5px;
+}
