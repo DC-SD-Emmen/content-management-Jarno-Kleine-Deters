@@ -1,7 +1,7 @@
 <?php
 
 
-class Database {
+class database {
     private $servername = "mysql";
     private $username = "root";
     private $password = "root";

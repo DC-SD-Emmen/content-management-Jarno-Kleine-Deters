@@ -2,8 +2,24 @@ body {
     background-color: darkgray;
 }
 
+.background {
+    position: absolute;
+    z-index: 0;
+    left: 15px;
+    top: 10px;
+    width: 1520px;
+    height: 680px;
+    background-image: radial-gradient(circle at 1px 1px, black 1px, transparent 0);
+    background-size: 25px 25px;
+    background-position: 0 0;
+}
+
+
+
 
 #LogInForm {
+    position: relative;
+    z-index: 99;
     width: 300px;
     height: 300px;
     padding-left: 50px;
@@ -12,16 +28,97 @@ body {
     background-color: gray;
     margin-left: 550px;
     margin-top: 200px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    margin-left: 50px;
+    font-family: 'Arial', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#username {
+    margin-left: -45px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #user {
     border-radius: 5px;
+    border: 1px solid black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px #333;
+}
+
+#password {
+    margin-left: -45px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #pass {
     border-radius: 5px;
+    border: 1px solid black;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px #333;
 }
 
 #submit {
+    margin-left: 80px;
     border-radius: 5px;
+    border: 1px solid black;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px #333;
+}
+
+#account {
+    margin-left: -25px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------- Home page ------------------------------------*/
+.accInfo-Text {
+    font-family: 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }

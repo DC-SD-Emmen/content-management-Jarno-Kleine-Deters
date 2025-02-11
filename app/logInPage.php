@@ -8,16 +8,16 @@ $port = "3306";
 
 <html>
 <head>
-    <title>Sign Up</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
     <div class="background"></div>
 
-    <form id="LogInForm" method="post">
+    <form id="LogInForm" action="home.php" method="post">
 
-        <h1 class="title">Sign Up</h1>
+        <h1 class="title">Log In</h1>
 
         <br>
 
@@ -29,7 +29,7 @@ $port = "3306";
 
         <label id="password" for="password">Password:</label>
         <input id="pass" type="password" name="password" id="password" required>
-    
+
         <br>
         <br>
 
@@ -37,29 +37,10 @@ $port = "3306";
 
         <br>
 
-        <p id="account">Already have an account? Log in <a href="logInPage.php">here</a></p>
-        
+        <p id="account">Don't have an account? Sign up <a href="index.php">here</a></p>
+
     </form>
 
-
-
-    <?php
-        spl_autoload_register(function ($class_name) {
-            include 'Classes/' . $class_name . '.php';
-        });
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-
-            $user = new signUp();
-            $user->insertUser($username, $password);
-
-            echo "User registered successfully!";
-        }
-    ?>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
