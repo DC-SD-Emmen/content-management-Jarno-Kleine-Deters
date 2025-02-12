@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background"></div>
+
     <?php
+        session_start();
+
          spl_autoload_register(function ($class_name) {
             include 'Classes/' . $class_name . '.php';
         });
@@ -20,17 +24,21 @@
 
 
 
+                
         
-        $session = $logIn->getSession();
 
-        if ($session) {
+        $logIn = new logIn();
+
+        if ($logIn->getSession()) {
             echo "Logged in";
-        }else{
-            echo "Not logged in";
+            echo '<h1 class="accInfo-Text">Username: ' . $_SESSION['username'] . '</h1>';
+            echo '<h1 class="accInfo-Text">Password: ' . $_SESSION['password'] . '</h1>';
+        } else {
+            echo "<h1 class='accInfo-Text'>Not logged in</h1>";
+
         }
+
     ?>
 
-    <h1 class="accInfo-Text">Username</h1>
-    <h1 class="accInfo-Text">Password</h1>
 </body>
 </html>
