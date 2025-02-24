@@ -4,7 +4,7 @@ body {
 
 .background {
     position: absolute;
-    z-index: 0;
+    z-index: -10;
     left: 15px;
     top: 10px;
     width: 1520px;
@@ -121,4 +121,26 @@ body {
     font-weight: bold;
     color: #333;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#loggedInAs {
+    font-family: 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(181, 48, 48);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#logOut {
+    margin-left: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px #333;
+    text-decoration: none;
+    z-index: 99;
 }

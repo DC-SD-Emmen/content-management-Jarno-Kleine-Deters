@@ -1,13 +1,15 @@
 <?php
-
-$host = "mysql"; // Le host est le nom du service, présent dans le docker-compose.yml
-$dbname = "database";
-$charset = "utf8";
-$port = "3306";
+    $host = "mysql"; // Le host est le nom du service, présent dans le docker-compose.yml
+    $dbname = "database";
+    $charset = "utf8";
+    $port = "3306";
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -41,25 +43,21 @@ $port = "3306";
         
     </form>
 
-
-
     <?php
-        spl_autoload_register(function ($class_name) {
-            include 'Classes/' . $class_name . '.php';
-        });
+    spl_autoload_register(function ($class_name) {
+        include 'Classes/' . $class_name . '.php';
+    });
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-            $user = new signUp();
-            $user->insertUser($username, $password);
+        $user = new signUp();
+        $user->insertUser($username, $password);
 
-            echo "User registered successfully!";
-        }
+        echo "User registered successfully!";
+    }
     ?>
-
-    <script src="script.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,22 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['username'])) {
+        header("Location: logInPage.php");
+        exit();
+    }
+
+    echo "<p id='loggedInAs'>Logged in as " . htmlspecialchars($_SESSION['username']) . "</p>";
+
+    spl_autoload_register(function ($class_name) {
+        include 'Classes/' . $class_name . '.php';
+    });
+
+
+    $fetchGames = new fetchGames();
+    $games = $fetchGames->getGamesByUser($_SESSION['username']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,37 +27,14 @@
 </head>
 <body>
     <div class="background"></div>
-
-    <?php
-        session_start();
-
-         spl_autoload_register(function ($class_name) {
-            include 'Classes/' . $class_name . '.php';
-        });
-
-        $username = isset($_POST['username']) ? $_POST['username'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-        $logIn = new logIn();
-        $logIn->selectUser($username, $password);
-
-
-
-                
-        
-
-        $logIn = new logIn();
-
-        if ($logIn->getSession()) {
-            echo "Logged in";
-            echo '<h1 class="accInfo-Text">Username: ' . $_SESSION['username'] . '</h1>';
-            echo '<h1 class="accInfo-Text">Password: ' . $_SESSION['password'] . '</h1>';
-        } else {
-            echo "<h1 class='accInfo-Text'>Not logged in</h1>";
-
-        }
-
-    ?>
-
+    <h1 class="accInfo-Text">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+    <a id="logOut" href="logout.php">Log out</a>
+    
+    <h2>Your Games</h2>
+    <ul>
+        <?php foreach ($games as $game): ?>
+            <li><?php echo htmlspecialchars($game['title']); ?></li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>
